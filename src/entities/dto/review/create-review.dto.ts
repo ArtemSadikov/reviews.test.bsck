@@ -1,4 +1,6 @@
 import { randomUUID } from 'crypto';
+import { ReviewRatingEntity } from '../../domain/review/review-rating/review-rating.entity';
+import { ReviewTextEntity } from '../../domain/review/review-text/review-text.entity';
 import { ReviewTitleEntity } from '../../domain/review/review-title/review-title.entity';
 import { ReviewEntity } from '../../domain/review/review.entity';
 
@@ -8,6 +10,12 @@ export class CreateReviewDto {
   id!: TCreateReviewDto
 
   title!: string
+
+  text!: string
+
+  rating!: number
+
+  createdAt!: Date
 
   public static fromDomain(domain: ReviewEntity): CreateReviewDto {
     const result = new CreateReviewDto()
@@ -21,7 +29,10 @@ export class CreateReviewDto {
   public static toDomain(dto: CreateReviewDto): ReviewEntity {
     return new ReviewEntity(
       dto.id,
-      new ReviewTitleEntity(dto.title)
+      new ReviewTitleEntity(dto.title),
+      new ReviewTextEntity(dto.text),
+      new ReviewRatingEntity(dto.rating),
+      dto.createdAt,
     )
   } 
 }

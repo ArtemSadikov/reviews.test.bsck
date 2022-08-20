@@ -4,7 +4,7 @@ import { ReviewUseCasePort } from '../../../../../../ports/in/review/use-case/re
 import { ReviewUseCaseSymbol } from '../../../../use-case/review/review.use-case';
 import { CreateReviewDto } from '../../../../../../entities/dto/review/create-review.dto';
 import { TReviewEntityId } from '../../../../../../entities/domain/review/review.entity';
-import { SingleReviewDto } from '../../../../../../entities/dto/review/single-review.dto';
+import { ReviewDto } from '../../../../../../entities/dto/review/single-review.dto';
 import { ApiPath } from 'swagger-express-ts';
 
 export const ReviewControllerSymbol = Symbol.for('ReviewController');
@@ -24,9 +24,9 @@ export class ReviewController {
   @httpGet('/:id')
   public async getReviewById(
     @requestParam('id') id: TReviewEntityId,
-  ): Promise<SingleReviewDto> {
+  ): Promise<ReviewDto> {
     const domain = await this._reviewUseCase.getById(id);
-    return SingleReviewDto.fromDomain(domain);
+    return ReviewDto.fromDomain(domain);
   }
 
   @httpPost('/')
