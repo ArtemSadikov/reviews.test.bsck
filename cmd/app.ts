@@ -9,6 +9,7 @@ import { DataBase } from '../pkg/db';
 import morgan from 'morgan'
 import { urlencoded, json } from 'express';
 import * as swagger from 'swagger-express-ts'
+import path from 'path';
 
 function bootstrap() {
   const container = new Container();
@@ -20,7 +21,9 @@ function bootstrap() {
     'reviews',
     'root',
     'root',
-    false
+    false,
+    path.join(__dirname, '../', 'src/entities/dao/**/postgres/**/*dao.{ts,js}'),
+    path.join(__dirname, '../', 'migrations/postgres/**/*.{ts,js}'),
   ))
   container.bind(DataBase).toDynamicValue((ctx) => {
     const db = new DataBase(
@@ -79,3 +82,5 @@ server.setErrorConfig((app) => {
 const app = server.build()
 
 app.listen({ port: 3000 }, () => {})
+
+export default container.get(DataBase).connection

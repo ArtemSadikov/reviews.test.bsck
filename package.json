@@ -5,7 +5,8 @@
   "scripts": {
     "build:app": "tsc",
     "start:app:dev": "npm run build:app && nodemon ./build/cmd/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrations:run": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:run -d cmd/app.ts"
   },
   "author": "",
   "license": "ISC",
@@ -33,6 +34,7 @@
     "reflect-metadata": "^0.1.13",
     "swagger-express-ts": "^1.1.0",
     "swagger-ui-dist": "^4.14.0",
+    "ts-node": "^10.9.1",
     "tsc": "^2.0.4",
     "typeorm": "^0.3.7",
     "typescript": "^4.7.4",

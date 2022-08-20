@@ -10,7 +10,7 @@ export interface IDataBase {
 }
 
 export class DataBase implements IDataBase {
-  private readonly _connection: DataSource
+  private readonly _connection: DataSource;
 
   constructor(
     private readonly _config: Config,
@@ -24,10 +24,8 @@ export class DataBase implements IDataBase {
       password: this._config.password,
       username: this._config.user,
       logging: true,
-      entities: [
-        path.join(__dirname, '../../', 'src/entities/dao/**/postgres/**/*dao.{ts,js}')
-      ],
-      synchronize: true
+      entities: [this._config.entities],
+      migrations: [this._config.migrations],
     })
   }
 
@@ -44,4 +42,7 @@ export class DataBase implements IDataBase {
     return new Promise((res) => res(true))
   }
 
+  public get connection(): DataSource {
+    return this._connection;
+  }
 }

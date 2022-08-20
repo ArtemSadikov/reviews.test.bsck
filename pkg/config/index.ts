@@ -8,6 +8,8 @@ export class Config {
     private readonly _user: string,
     private readonly _password: string,
     private readonly _ssl: boolean,
+    private readonly _entities: string,
+    private readonly _migrations: string,
   ) {}
 
   public get ssl(): boolean {
@@ -32,5 +34,13 @@ export class Config {
 
   public get host(): string {
     return this._host;
+  }
+
+  public get entities(): string {
+    return this._entities;
+  }
+
+  public get migrations(): string {
+    return this._migrations;
   }
 }
