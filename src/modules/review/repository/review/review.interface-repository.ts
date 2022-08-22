@@ -1,6 +1,5 @@
-import { inject, injectable } from 'inversify';
 import { Repository } from 'typeorm';
-import { ReviewDaoEntity } from '../../../../entities/dao/review/postgres/review.dao';
+import { ReviewDaoEntity } from './postgres/dao/review.dao-postgres';
 
 export const ReviewRepositorySymbol = Symbol.for('ReviewRepository')
 

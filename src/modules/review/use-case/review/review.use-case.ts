@@ -1,7 +1,6 @@
-import { ReviewEntity, TReviewEntityId } from '../../../../entities/domain/review/review.entity';
-import { ReviewUseCasePort } from '../../../../ports/in/review/use-case/review.use-case-port';
-import { ReviewRepository } from '../../../../ports/out/review/review-repository.port';
-import { ReviewRepositoryImpl } from '../../repository/review/review.repository';
+import { ReviewEntity, TReviewEntityId } from '@core/entities/review/domain/review.entity';
+import { ReviewUseCasePort } from '@core/ports/in/review/use-case/review.use-case-port';
+import { ReviewRepository } from '@core/ports/out/review/review-repository.port';
 
 export const ReviewUseCaseSymbol = Symbol.for('ReviewUseCase');
 

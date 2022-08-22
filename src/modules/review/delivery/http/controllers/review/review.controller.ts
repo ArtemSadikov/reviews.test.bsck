@@ -1,10 +1,10 @@
+import { TReviewEntityId } from '@core/entities/review/domain/review.entity';
+import { CreateReviewDto } from '@core/entities/review/dto/review/create-review.dto';
+import { ReviewDto } from '@core/entities/review/dto/review/single-review.dto';
+import { ReviewUseCaseSymbol } from '@core/modules/review/use-case/review/review.use-case';
+import { ReviewUseCasePort } from '@core/ports/in/review/use-case/review.use-case-port';
 import { inject } from 'inversify';
 import { controller, httpGet, httpPost, requestBody, requestParam } from 'inversify-express-utils';
-import { ReviewUseCasePort } from '../../../../../../ports/in/review/use-case/review.use-case-port';
-import { ReviewUseCaseSymbol } from '../../../../use-case/review/review.use-case';
-import { CreateReviewDto } from '../../../../../../entities/dto/review/create-review.dto';
-import { TReviewEntityId } from '../../../../../../entities/domain/review/review.entity';
-import { ReviewDto } from '../../../../../../entities/dto/review/single-review.dto';
 import { ApiPath } from 'swagger-express-ts';
 
 export const ReviewControllerSymbol = Symbol.for('ReviewController');

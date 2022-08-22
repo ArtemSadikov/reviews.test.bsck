@@ -1,8 +1,8 @@
-import { EntityMapper } from '../../../../pkg/entity-mapper';
-import { ReviewRatingEntity } from '../../domain/review/review-rating/review-rating.entity';
-import { ReviewTextEntity } from '../../domain/review/review-text/review-text.entity';
-import { ReviewTitleEntity } from '../../domain/review/review-title/review-title.entity';
-import { ReviewEntity } from '../../domain/review/review.entity';
+import { EntityMapper } from '@pkg/entity-mapper';
+import { ReviewRatingEntity } from '../../domain/review-rating/review-rating.entity';
+import { ReviewTextEntity } from '../../domain/review-text/review-text.entity';
+import { ReviewTitleEntity } from '../../domain/review-title/review-title.entity';
+import { ReviewEntity } from '../../domain/review.entity';
 import { CreateReviewDto } from './create-review.dto';
 
 export class CreateReviewMapper implements EntityMapper<ReviewEntity, CreateReviewDto> {

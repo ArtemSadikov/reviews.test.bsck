@@ -1,4 +1,4 @@
-import { ValidateError } from '../../../../../pkg/errors/validate.error';
+import { ValidateError } from '@pkg/errors/validate.error';
 
 const MAX_TITLE_LENGTH = 10;
 

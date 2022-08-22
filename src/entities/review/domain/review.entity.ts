@@ -19,7 +19,7 @@ export class ReviewEntity {
     title: ReviewTitleEntity,
     text: ReviewTextEntity,
     rating: ReviewRatingEntity,
-    createdAt: Date
+    createdAt: Date,
   ) {
     return new ReviewEntity(
       id,
@@ -34,14 +34,14 @@ export class ReviewEntity {
     title: ReviewTitleEntity,
     text: ReviewTextEntity,
     rating: ReviewRatingEntity,
-    createdAt: Date
+    createdAt: Date,
   ) {
     return new ReviewEntity(
       randomUUID(),
       title,
       text,
       rating,
-    createdAt
+      createdAt,
     );
   }
 
@@ -64,5 +64,6 @@ export class ReviewEntity {
   public get createdAt(): Date {
     return this._createdAt;
   }
+
 }
 

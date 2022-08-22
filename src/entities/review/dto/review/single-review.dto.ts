@@ -1,8 +1,8 @@
 import { randomUUID } from 'crypto';
-import { ReviewRatingEntity } from '../../domain/review/review-rating/review-rating.entity';
-import { ReviewTextEntity } from '../../domain/review/review-text/review-text.entity';
-import { ReviewTitleEntity } from '../../domain/review/review-title/review-title.entity';
-import { ReviewEntity } from '../../domain/review/review.entity';
+import { ReviewRatingEntity } from '../../domain/review-rating/review-rating.entity';
+import { ReviewTextEntity } from '../../domain/review-text/review-text.entity';
+import { ReviewTitleEntity } from '../../domain/review-title/review-title.entity';
+import { ReviewEntity } from '../../domain/review.entity';
 import { CreateReviewDto } from './create-review.dto';
 
 export type TSingleReviewDtoId = ReturnType<typeof randomUUID>
